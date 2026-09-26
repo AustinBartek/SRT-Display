@@ -3,6 +3,8 @@ import tkinter.font as tkfont
 WIDTH, HEIGHT = 800, 480
 BG = "black"
 
+#Austin was here
+
 class RaceDash(tk.Tk):
     def __init__(self):
         super().__init__()
