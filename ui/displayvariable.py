@@ -1,4 +1,4 @@
-import value_reader
+import data.ecu as ecu
 
 class DisplayVariable:
     def __init__(self, name, getter):
@@ -8,6 +8,11 @@ class DisplayVariable:
     def get_value(self):
         return self.getter()
 
+reader = ecu.ECUReader()
+
 def get_rpm():
-    v
-RPM = DisplayVariable("RPM", )
+    reader.get_rpm()
+
+RPM = DisplayVariable("RPM", get_rpm)
+
+print(RPM.get_value())

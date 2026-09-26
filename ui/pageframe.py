@@ -1,11 +1,16 @@
 import tkinter as tk
+from data.common import WIDTH, HEIGHT
 
+# Every page will have a 3 columns, the first and last with 3 rows, and the middle with 2.
 class PageFrame(tk.Frame):
-    # Create a canvas to draw on
-            c=tk.Canvas(self, width=WIDTH, height=HEIGHT, bg=BG, highlightthickness=0)
-            self.canvas = c
-            c.pack()
+    def __init__(self, parent, controller, index):
+        super().__init__(parent)
+
+        self.parent = parent
+        self.controller = controller
+
+        c=tk.Canvas(self, width=WIDTH, height=HEIGHT, highlightthickness=0)
+        self.canvas = c
+        c.pack()
             
-            c.create_oval(WIDTH*4//5,-HEIGHT//2,WIDTH*3//2,HEIGHT//2)
-            #self.canvas.create_rectangle(WIDTH//2 - 100, 10, WIDTH//2 + 100, 200, outline="White", width=5)
-            #self.canvas.create_text(WIDTH//2, 250, text="Gear", fill="White", font=("Arial", 24))
+        c.create_oval(WIDTH*4//5,-HEIGHT//2,WIDTH*3//2,HEIGHT//2)
